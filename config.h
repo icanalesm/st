@@ -156,16 +156,8 @@ static unsigned int defaultattr = 11;
  */
 static MouseShortcut mshortcuts[] = {
 	/* button               mask            string */
-	/* Disable these shortcuts as pointed out in the notes of the scrollback
-	   patch: https://st.suckless.org/patches/scrollback
-	{ Button4,              XK_NO_MOD,      "\031" },
-	{ Button5,              XK_NO_MOD,      "\005" },*/
-};
-
-MouseKey mkeys[] = {
-	/* button               mask            function        argument */
-	{ Button4,              XK_NO_MOD,      kscrollup,      {.i =  1} },
-	{ Button5,              XK_NO_MOD,      kscrolldown,    {.i =  1} },
+	{ Button4,              XK_ANY_MOD,     "\031" },
+	{ Button5,              XK_ANY_MOD,     "\005" },
 };
 
 /* Internal keyboard shortcuts. */
@@ -185,10 +177,6 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Down,        zoom,           {.f = -1} },
 	{ TERMMOD,              XK_Left,        zoomreset,      {.f =  0} },
 	{ TERMMOD,              XK_Right,       zoomreset,      {.f =  0} },
-	{ TERMMOD,              XK_K,           kscrollup,      {.i =  1} },
-	{ TERMMOD,              XK_J,           kscrolldown,    {.i =  1} },
-	{ TERMMOD,              XK_U,           kscrollup,      {.i = -1} },
-	{ TERMMOD,              XK_D,           kscrolldown,    {.i = -1} },
 };
 
 /*
